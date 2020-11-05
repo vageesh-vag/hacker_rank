@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,a[1000],i,j,f,k,l;
+    cin>>n;
+    for(i=0;i<n;i++)
+    cin>>a[i];
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(a[i]>a[j])
+            {
+                k=a[i];
+                a[i]=a[j];
+                a[j]=k;
+            }
+        }
+    }
+    l=n;
+    cout<<l<<"\n";
+    while(l>0)
+    {
+        f=0;
+        for(i=0;i<l;i++)
+        {
+        a[i]=a[i]-a[l-1];
+        }
+        for(i=0;i<l;i++)
+        {
+            if(a[i]==0)
+            f=f+1;
+        }
+        l=l-f;
+        if(l>0)
+        cout<<l<<"\n";
+    }
+}

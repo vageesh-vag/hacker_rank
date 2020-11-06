@@ -1,0 +1,51 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+    int n,m,i,j,k,f,g=0,h=0;
+    string a[500];
+    cin>>n>>m;
+    for(i=0;i<n;i++)
+    cin>>a[i];
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            f=0;
+            for(k=0;k<m;k++)
+            {
+                if(a[i][k]==a[j][k])
+                {
+                    if((a[i][k]=='1')&&(a[j][k]=='1'))
+                    f=f+1;
+                }
+                else
+                f=f+1;
+            }
+            if(f>g)
+            g=f;
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            f=0;
+            for(k=0;k<m;k++)
+            {
+                if(a[i][k]==a[j][k])
+                {
+                    if((a[i][k]=='1')&&(a[j][k]=='1'))
+                    f=f+1;
+                }
+                else
+                f=f+1;
+            }
+            if(f==g)
+            h=h+1;
+        }
+    }
+    cout<<g<<"\n";
+    cout<<h<<"\n";
+}

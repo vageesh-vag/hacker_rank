@@ -1,0 +1,72 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+    int n,i,f=0,a=0,b=0,j,c=0,d=0;
+    string s,t="Ab1";
+    string special_characters = "!@#$%^&*()-+";
+    cin>>n;
+    cin>>s;
+    if(s.length()<6)
+    {
+        for(i=0;i<s.length();i++)
+        {
+            if(s[i]>='0'&&s[i]<='9')
+            f=f+1;
+            if(s[i]>='a'&&s[i]<='z')
+            a=a+1;
+            if(s[i]>='A'&&s[i]<='Z')
+            b=b+1;
+            for(j=0;j<special_characters.length();j++)
+            {
+            if(s[i]==special_characters[j])
+            c=c+1;
+            }
+        }
+        if(f==0||a==0||b==0||c==0)
+        {
+        if(f==0)
+        d=d+1;
+        if(a==0)
+        d=d+1;
+        if(b==0)
+        d=d+1;
+        if(c==0)
+        d=d+1;
+        }
+        if(d>6-s.length())
+        cout<<d;
+        else
+        cout<<6-s.length();
+    }
+    else
+    {
+        for(i=0;i<s.length();i++)
+        {
+            if(s[i]>='0'&&s[i]<='9')
+            f=f+1;
+            if(s[i]>='a'&&s[i]<='z')
+            a=a+1;
+            if(s[i]>='A'&&s[i]<='Z')
+            b=b+1;
+            for(j=0;j<special_characters.length();j++)
+            {
+            if(s[i]==special_characters[j])
+            c=c+1;
+            }
+        }
+        if(f==0||a==0||b==0||c==0)
+        {
+        if(f==0)
+        d=d+1;
+        if(a==0)
+        d=d+1;
+        if(b==0)
+        d=d+1;
+        if(c==0)
+        d=d+1;
+        }
+        cout<<d;
+    }
+}

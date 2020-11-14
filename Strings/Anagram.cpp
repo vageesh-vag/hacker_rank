@@ -1,0 +1,61 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+    int i,n,j,q,k,f,b[26],c[26];
+    string s,a="abcdefghijklmnopqrstuvwxyz";
+    cin>>n;
+    for(i=0;i<n;i++)
+    {
+        cin>>s;
+        for(j=0;j<26;j++)
+        {
+        b[j]=0;
+        c[j]=0;
+        }
+        //for(j=0;j<26;j++)
+        //cout<<b[j];
+        //cout<<"\n";
+        //for(j=0;j<26;j++)
+        //cout<<c[j];
+        //cout<<"\n";
+        if(s.length()%2!=0)
+        cout<<"-1"<<"\n";
+        else
+        {
+            f=0;
+            q=s.length()/2;
+            for(j=0;j<q;j++)
+            {
+                for(k=0;k<26;k++)
+                {
+                    if(s[j]==a[k])
+                    b[k]=b[k]+1;
+                }
+            }
+            for(j=q;j<s.length();j++)
+            {
+                for(k=0;k<26;k++)
+                {
+                    if(s[j]==a[k])
+                    c[k]=c[k]+1;
+                }
+            }
+            for(j=0;j<26;j++)
+            {
+                if(b[j]>0&&c[j]>0)
+                {
+                while(b[j]>0&&c[j]>0)
+                    {
+                        b[j]=b[j]-1;
+                        c[j]=c[j]-1;
+                    }
+                }
+            }
+            for(j=0;j<26;j++)
+            f=f+b[j];
+            cout<<f<<"\n";
+        }
+    }
+}
